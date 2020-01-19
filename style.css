@@ -1,0 +1,172 @@
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: #ffc600;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+}
+
+.block {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    font-size: 10rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.game {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.hole {
+    flex: 1 0 33.33%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hole::after {
+    content: '';
+    display: block;
+    background: url(dirt.svg) bottom center no-repeat;
+    width: 100%;
+    height: 70px;
+    background-size: contain;
+    z-index: 2;
+    position: absolute;
+    bottom: -30px;
+}
+
+.mole {
+    background: url(mole.svg) bottom center no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 50%;
+    top: 100%;
+    transition: top 600ms;
+}
+
+.hole.up .mole {
+    top: 0;
+}
+
+.start,
+.level-select,
+.show-result,
+.close-result {
+    margin: 12px auto -4px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 5em;
+    color: #fff;
+    background-color: #986a24;
+    border: 5px dashed black;
+    display: block;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.show-result,
+.close-result {
+    font-size: 3em;
+    margin: 40px auto 10px;
+}
+
+.close-result {
+    display: none;
+}
+
+
+
+.menu {
+    text-align: center;
+}
+
+.menu label {
+    font-size: 4em;
+}
+
+.menu input {
+    height: 50px;
+    vertical-align: middle;
+    font-size: 18px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+.name-warning,
+.level-warning {
+    font-size: 24px;
+    display: none;
+    color: #e51818;
+}
+
+
+.finish{
+    position: fixed !important;
+    height: auto;
+    width: 40%;
+    top: 30%;
+    left: 30%;
+    display: none;
+    z-index: 5;
+}
+
+.finish:before{
+    position: fixed;
+    content: '';
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .6;
+    z-index: -1;
+}
+
+.finish-result{
+    background-color: #ffc600;
+    padding: 60px;
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    border: black dashed 5px;
+    text-align: center
+}
+
+.catched-moles {
+    margin: 0 0 30px;
+}
+
+.close {
+    cursor: pointer;
+    color: #e51818;
+}
+
+
+
+.table {
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+th {
+    font-size: 24px;
+}
